@@ -9,6 +9,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 
 import me.khaly.core.module.Module;
+import me.khaly.module.hub.listener.AsyncPlayerChatListener;
 
 public class HubModule extends Module {
 
@@ -24,7 +25,7 @@ public class HubModule extends Module {
 
 	@Override
 	public void load() {
-		
+		registerListeners(new AsyncPlayerChatListener(getProvider()));
 	}
 
 	@Override
